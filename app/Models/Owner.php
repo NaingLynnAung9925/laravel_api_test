@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Owner extends Model
 {
     use HasFactory;
-    public function post()
+    public function cars()
     {
-        return $this->belongsTo(Post::class, 'id');
+        return $this->belongsToMany(Car::class, 'car_owners');
     }
 }
